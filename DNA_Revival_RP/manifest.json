@@ -1,0 +1,23 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Answer to Extinction RP",
+    "description": "Bring extinct species back to life!",
+    "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeee01", 
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 20, 30]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeee02", 
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeee10", 
+      "version": [1, 0, 0]
+    }
+  ]
+}

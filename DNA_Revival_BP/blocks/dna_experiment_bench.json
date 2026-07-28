@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.30",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dna:experiment_bench",
+      "menu_category": {
+        "category": "equipment"
+      }
+    },
+    "components": {
+      "minecraft:collision_box": true,
+      "minecraft:selection_box": true,
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 2
+      },
+      "minecraft:light_dampening": 0,
+      "minecraft:geometry": "geometry.dna_bench",
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "gene_bench",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:interact": {
+        "on_interact": {
+          "trigger": "dna:open_bench_ui"
+        }
+      }
+    }
+  }
+}

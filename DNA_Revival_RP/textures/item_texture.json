@@ -1,0 +1,30 @@
+{
+  "resource_pack_name": "Echoes of Extinction",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "syringe_empty": {
+      "textures": "textures/items/syringe_empty"
+    },
+    "syringe_red": {
+      "textures": "textures/items/syringe_red"
+    },
+    "syringe_gold": {
+      "textures": "textures/items/syringe_gold"
+    },
+    "syringe_broken": {
+      "textures": "textures/items/syringe_broken"
+    },
+    "stabilizer": {
+      "textures": "textures/items/stabilizer"
+    },
+    "dodo_feather": {
+      "textures": "textures/items/dodo_feather"
+    },
+    "dna_bench_top": {
+      "textures": "textures/blocks/dna_bench_top"
+    },
+    "dna_bench_side": {
+      "textures": "textures/blocks/dna_bench_side"
+    }
+  }
+}

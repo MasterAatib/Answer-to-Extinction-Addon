@@ -1,0 +1,11 @@
+tile.dna:experiment_bench.name=DNA Experiment Bench
+
+item.dna:empty_syringe.name=Empty Syringe
+item.dna:chicken_sample.name=Chicken DNA Sample
+item.dna:dodo_syringe.name=§aModified Dodo Genes
+item.dna:failed_syringe.name=§cDegraded Genetic Material
+item.dna:stabilizer.name=Genetic Stabilizer
+item.dna:dodo_feather.name=Dodo Feather
+
+entity.dna:dodo_baby.name=Baby Dodo
+entity.dna:dodo_adult.name=Dodo
