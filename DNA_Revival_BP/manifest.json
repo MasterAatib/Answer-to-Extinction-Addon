@@ -3,21 +3,32 @@
   "header": {
     "name": "Answer to Extinction BP",
     "description": "Bring extinct species back to life!",
-    "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeee01", 
+    "uuid": "b4b4f536-802b-4a88-a32a-a732b6928512",
     "version": [1, 0, 0],
-    "min_engine_version": [1, 20, 30]
+    "min_engine_version": [1, 21, 0]
   },
   "modules": [
     {
       "type": "data",
-      "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeee02", 
+      "uuid": "c50611d6-3163-4823-939d-b71f1cc0139e",
       "version": [1, 0, 0]
+    },
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "b0f8db5d-dfef-4cd7-9eac-a375228f88dc",
+      "version": [1, 0, 0],
+      "entry": "scripts/main.js"
     }
   ],
   "dependencies": [
     {
-      "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeee10", 
+      "uuid": "4ac75194-d4e4-4a3a-a190-f4b6f78d505b",
       "version": [1, 0, 0]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.15.0"
     }
   ]
 }
