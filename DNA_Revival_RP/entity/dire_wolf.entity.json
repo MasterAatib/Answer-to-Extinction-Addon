@@ -1,0 +1,50 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dna:dire_wolf",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/dire_wolf/dire_wolf",
+        "tame": "textures/entity/dire_wolf/dire_wolf_tame",
+        "angry": "textures/entity/dire_wolf/dire_wolf_angry"
+      },
+      "geometry": {
+        "default": "geometry.dire_wolf",
+        "baby": "geometry.wolf"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.attack_time = Math.mod(query.modified_distance_moved, 40);",
+          "variable.is_baby = query.is_baby;",
+          "variable.is_riding = query.is_riding;"
+        ]
+      },
+      "animations": {
+        "walk": "animation.dire_wolf.walk",
+        "run": "animation.dire_wolf.run",
+        "sit": "animation.dire_wolf.sit",
+        "look_at_target": "animation.dire_wolf.look_at_target",
+        "attack": "animation.dire_wolf.attack",
+        "shake": "animation.dire_wolf.shake",
+        "baby_transform": "animation.dire_wolf.baby_transform"
+      },
+      "animation_controllers": [
+        { "look_at": "controller.animation.dire_wolf.look_at" },
+        { "move": "controller.animation.dire_wolf.move" },
+        { "sit": "controller.animation.dire_wolf.sit" },
+        { "baby": "controller.animation.dire_wolf.baby" },
+        { "attack": "controller.animation.dire_wolf.attack" }
+      ],
+      "render_controllers": [
+        "controller.render.dire_wolf"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 5
+      }
+    }
+  }
+}

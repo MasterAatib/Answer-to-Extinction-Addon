@@ -3,20 +3,20 @@
   "header": {
     "name": "Answer to Extinction RP",
     "description": "Bring extinct species back to life!",
-    "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeee01", 
+    "uuid": "06d935c1-f6ed-4e7e-bf43-8f1d40f8ee06",
     "version": [1, 0, 0],
-    "min_engine_version": [1, 20, 30]
+    "min_engine_version": [1, 21, 0]
   },
   "modules": [
     {
       "type": "resources",
-      "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeee02", 
+      "uuid": "7b570d17-a261-48d5-9e82-66adca613966",
       "version": [1, 0, 0]
     }
   ],
   "dependencies": [
     {
-      "uuid": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeee10", 
+      "uuid": "b4b4f536-802b-4a88-a32a-a732b6928512",
       "version": [1, 0, 0]
     }
   ]

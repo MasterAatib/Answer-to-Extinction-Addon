@@ -1,0 +1,16 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dna.gene_bench.bob": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": ["bob"],
+          "transitions": [
+            { "default": "1" }
+          ]
+        }
+      }
+    }
+  }
+}

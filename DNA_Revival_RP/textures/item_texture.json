@@ -1,30 +1,32 @@
 {
-  "resource_pack_name": "Echoes of Extinction",
+  "resource_pack_name": "Answer to Extinction RP",
   "texture_name": "atlas.items",
   "texture_data": {
-    "syringe_empty": {
-      "textures": "textures/items/syringe_empty"
+    "empty_syringe": {
+      "textures": "textures/items/empty_syringe"
     },
-    "syringe_red": {
-      "textures": "textures/items/syringe_red"
+    "blood_syringe": {
+      "textures": "textures/items/blood_syringe"
     },
-    "syringe_gold": {
-      "textures": "textures/items/syringe_gold"
+    "brown_syringe": {
+      "textures": "textures/items/brown_syringe"
     },
-    "syringe_broken": {
-      "textures": "textures/items/syringe_broken"
-    },
-    "stabilizer": {
-      "textures": "textures/items/stabilizer"
-    },
-    "dodo_feather": {
-      "textures": "textures/items/dodo_feather"
-    },
-    "dna_bench_top": {
-      "textures": "textures/blocks/dna_bench_top"
-    },
-    "dna_bench_side": {
-      "textures": "textures/blocks/dna_bench_side"
+    "glow_syringe": {
+      "textures": "textures/items/glow_syringe",
+      "animation": {
+        "frames": [
+          { "index": 0 },
+          { "index": 1 },
+          { "index": 2 },
+          { "index": 3 },
+          { "index": 4 },
+          { "index": 5 },
+          { "index": 6 },
+          { "index": 7 }
+        ],
+        "frametime": 1,
+        "interpolate": false
+      }
     }
   }
 }

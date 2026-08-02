@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dna:gene_bench_entity",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/dna"
+      },
+      "geometry": {
+        "default": "geometry.dna"
+      },
+      "render_controllers": [],
+      "spawn_egg": {
+        "base_color": "#22cc66",
+        "overlay_color": "#004411"
+      },
+      "animations": {
+        "bob": "animation.dna.gene_bench.bob"
+      },
+      "animation_controllers": [
+        { "bob_controller": "controller.animation.dna.gene_bench.bob" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dna:dire_wolf",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:wolf_baby": {
+        "minecraft:is_baby": {},
+        "minecraft:scale": { "value": 0.5 }
+      },
+      "minecraft:wolf_tamed": {
+        "minecraft:is_tamed": {},
+        "minecraft:behavior.follow_owner": {
+          "priority": 1,
+          "speed_multiplier": 1.0,
+          "start_distance": 10,
+          "stop_distance": 2
+        },
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 2,
+          "alert_distance": 16
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 3
+        },
+        "minecraft:tameable": {
+          "probability": 0.0,
+          "tame_items": [],
+          "tame_event": {}
+        }
+      },
+      "minecraft:wolf_sitting": {
+        "minecraft:is_sitting": {},
+        "minecraft:behavior.sit": {
+          "priority": 0
+        }
+      },
+      "minecraft:wolf_angry": {
+        "minecraft:anger_level": {
+          "anger_transfer": 100,
+          "anger_decrement_interval": 100
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 1,
+          "entity_types": [
+            {
+              "filters": { "test": "is_family", "subject": "other", "value": "mob" },
+              "max_dist": 16
+            }
+          ],
+          "must_see": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["dire_wolf", "mob"]
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 0.85
+      },
+      "minecraft:movement": {
+        "value": 0.3
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:navigation.walk": {
+        "can_path_over_water": false,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_air": true,
+        "breathes_water": false
+      },
+      "minecraft:leashable": {
+        "soft_distance": 4.0,
+        "hard_distance": 6.0,
+        "max_distance": 10.0
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 128,
+          "max_distance": 256
+        }
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 0.8
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 8.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:behavior.panic": {
+        "priority": 0,
+        "speed_multiplier": 1.25
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 2,
+        "speed_multiplier": 1.0,
+        "track_target": true
+      },
+      "minecraft:attack": {
+        "damage": 4
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "alert_same_type": true
+      },
+      "minecraft:behavior.follow_parent": {
+        "priority": 5,
+        "speed_multiplier": 1.1
+      },
+      "minecraft:ageable": {
+        "duration": 1200,
+        "feed_items": ["minecraft:bone", "minecraft:rotten_flesh"],
+        "grow_up": {
+          "event": "minecraft:entity_born",
+          "target": "self"
+        }
+      },
+      "minecraft:breedable": {
+        "require_tame": false,
+        "breeds_with": {
+          "mate_type": "dna:dire_wolf",
+          "baby_type": "dna:dire_wolf",
+          "breed_event": {
+            "event": "minecraft:entity_born",
+            "target": "self"
+          }
+        },
+        "breed_items": ["minecraft:bone"]
+      },
+      "minecraft:behavior.breed": {
+        "priority": 3,
+        "speed_multiplier": 1.0
+      },
+      "minecraft:behavior.follow_owner": {
+        "priority": 4,
+        "speed_multiplier": 1.0,
+        "start_distance": 10,
+        "stop_distance": 2
+      },
+      "minecraft:tameable": {
+        "probability": 0.33,
+        "tame_items": ["minecraft:bone"],
+        "tame_event": {
+          "event": "dna:on_tame",
+          "target": "self"
+        }
+      },
+      "minecraft:behavior.owner_hurt_by_target": {
+        "priority": 1,
+        "alert_distance": 16
+      },
+      "minecraft:behavior.owner_hurt_target": {
+        "priority": 2
+      },
+      "minecraft:behavior.sit": {
+        "priority": 0
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": ["player"],
+        "seats": {
+          "position": [0.0, 0.8, 0.0],
+          "min_rotation": [0, 0],
+          "max_rotation": [0, 0]
+        },
+        "controlling_seat": 0,
+        "require_saddle": false,
+        "crouch_skip_interact": true
+      },
+      "minecraft:behavior.ride": {
+        "priority": 0,
+        "speed_multiplier": 1.0
+      }
+    },
+    "events": {
+        
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["minecraft:wolf_tamed","minecraft:wolf_baby"]  // optional: make spawned ones tame? We'll leave as untamed by default.
+          
+        }
+      },
+      "minecraft:entity_born": {
+        "add": {
+          "component_groups": ["minecraft:wolf_baby"]
+        }
+      },
+      "dna:on_tame": {
+        "add": {
+          "component_groups": ["minecraft:wolf_tamed"]
+        },
+        "run_command": {
+          "command": [
+            "playsound random.orb @p"
+          ]
+        }
+      },
+      "dna:set_sit": {
+        "add": {
+          "component_groups": ["minecraft:wolf_sitting"]
+        },
+        "remove": {
+          "component_groups": ["minecraft:wolf_angry"]
+        }
+      },
+      "dna:set_stand": {
+        "remove": {
+          "component_groups": ["minecraft:wolf_sitting"]
+        }
+      },
+      "dna:set_angry": {
+        "add": {
+          "component_groups": ["minecraft:wolf_angry"]
+        }
+      },
+      "dna:set_calm": {
+        "remove": {
+          "component_groups": ["minecraft:wolf_angry"]
+        }
+      }
+    },
+    "properties": {
+      "dna:is_baby": {
+        "type": "bool",
+        "default": false
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "namespace": "um_common",
+
+  //unknown mcpe ui common file
+
+  "invisible_slot_cell_image": {
+    "type": "image",
+    "texture": "textures/ui/cell_invisible",
+    "anchor_from": "center",
+    "anchor_to": "center"
+  },
+
+  "close_button": {
+    "type": "panel",
+    "$show_close_button|default": true,
+    "$close_button_visible_binding_name|default": "#close_button_visible",
+    "$close_button_offset|default": [0, 0],
+    "$close_button_layer|default": 2,
+    "$use_compact_close_button|default": false,
+    "controls": [
+      {
+        "close_button_holder": {
+          "type": "panel",
+          "ignored": "(not $show_close_button)",
+          "controls": [
+            {
+              "close@common.close_button": {
+                "layer": "$close_button_layer",
+                "offset": "$close_button_offset",
+                "ignored": "$use_compact_close_button"
+              }
+            },
+            {
+              "compact_close@common.compact_close_button": {
+                "layer": "$close_button_layer",
+                "offset": "$close_button_offset",
+                "ignored": "(not $use_compact_close_button)"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "$close_button_visible_binding_name",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

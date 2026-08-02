@@ -17,7 +17,7 @@
       "minecraft:geometry": "geometry.dna_bench",
       "minecraft:material_instances": {
         "*": {
-          "texture": "gene_bench",
+          "texture": "textures/blocks/gene_bench",
           "render_method": "opaque"
         }
       },

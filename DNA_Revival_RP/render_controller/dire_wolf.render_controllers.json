@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.dire_wolf": {
+      "geometry": "Array['default', 'baby'][variable.is_baby]",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": [
+        "Texture.default",
+        "Texture.tame",
+        "Texture.angry"
+      ],
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1,
+        "a": 1
+      },
+      "is_visible": "!query.is_ghost"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "ui_defs": [
+        "ui/um_common.json",
+        "ui/gene_bench.json"
+    ]
+}
