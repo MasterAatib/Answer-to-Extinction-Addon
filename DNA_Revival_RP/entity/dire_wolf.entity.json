@@ -9,7 +9,8 @@
       "textures": {
         "default": "textures/entity/dire_wolf/dire_wolf",
         "tame": "textures/entity/dire_wolf/dire_wolf_tame",
-        "angry": "textures/entity/dire_wolf/dire_wolf_angry"
+        "angry": "textures/entity/dire_wolf/dire_wolf_angry",
+        "baby": "textures/entity/dire_wolf/baby_dire_wolf"
       },
       "geometry": {
         "default": "geometry.dire_wolf",
@@ -24,8 +25,16 @@
         "wolf_baby_scaling": "animation.wolf.baby_scaling",
         "wolf_look_at": "animation.common.look_at_target",
         "wolf_leg_default": "animation.wolf.leg_default",
-        "wolf_sitting": "animation.wolf.sitting"
+        "wolf_sitting": "animation.wolf.sitting",
+        "baby_move": "animation.wolf.walk",
+        "baby_idle": "animation.wolf.idle",
+        "baby_sit": "animation.wolf.sit"
       },
+      "animation_controllers": [
+        { "baby_move": "controller.animation.dire_wolf_baby.move" },
+        { "move": "controller.animation.dire_wolf.move" },
+        { "sit": "controller.animation.dire_wolf.sit" }
+      ],
       "scripts": {
         "animate": [
           { "walk": "query.modified_move_speed * !query.is_baby" },

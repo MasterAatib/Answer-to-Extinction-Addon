@@ -3,11 +3,9 @@
   "render_controllers": {
     "controller.render.dire_wolf": {
       "geometry": "query.is_baby ? Geometry.baby : Geometry.default",
-      "materials": [
-        { "*": "Material.default" }
-      ],
+      "materials": [ { "*": "Material.default" } ],
       "textures": [
-        "Texture.default"
+        "query.is_baby ? Texture.baby : (query.is_tamed ? Texture.tame : (query.is_angry ? Texture.angry : Texture.default))"
       ]
     }
   }

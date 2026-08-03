@@ -1,0 +1,22 @@
+{
+  "format_version": "1.17.0",
+  "animation_controllers": {
+    "controller.animation.dire_wolf_baby": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [ "baby_walk" ],
+          "transitions": [
+            { "sit": "query.is_sitting" }
+          ]
+        },
+        "sit": {
+          "animations": [ "baby_sit" ],
+          "transitions": [
+            { "default": "!query.is_sitting" }
+          ]
+        }
+      }
+    }
+  }
+}

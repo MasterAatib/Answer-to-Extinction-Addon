@@ -8,7 +8,7 @@
       },
       "textures": {
         "default": "textures/entity/dodo_adult",
-        "baby": "textures/entity/chicken"
+        "baby": "textures/entity/baby_dodo"
       },
       "geometry": {
         "default": "geometry.dodo",

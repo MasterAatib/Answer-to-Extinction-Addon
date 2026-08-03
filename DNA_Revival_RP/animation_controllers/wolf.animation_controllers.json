@@ -7,7 +7,7 @@
         "default": {
           "animations": ["wolf_angry"],
           "transitions": [
-            { "transforming": "query.get_property('dna:is_transforming') == 1" }
+            { "transforming": "query.property('dna:is_transforming') == 1" }
           ]
         }
       }
