@@ -1,0 +1,9 @@
+{
+  "resource_pack_name": "Answer to Extinction RP",
+  "texture_name": "atlas.terrain",
+  "texture_data": {
+    "dna:gene_bench": {
+      "textures": "textures/blocks/gene_bench"
+    }
+  }
+}

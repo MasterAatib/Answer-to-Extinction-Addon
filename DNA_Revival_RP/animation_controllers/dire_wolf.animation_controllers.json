@@ -74,7 +74,7 @@
       "states": {
         "default": {
           "transitions": [
-            { "attacking": "query.attack_time >= 0.1 && query.attack_time <= 0.15" }
+            { "attacking": "variable.attack_time >= 0.1 && variable.attack_time <= 0.15" }
           ]
         },
         "attacking": {

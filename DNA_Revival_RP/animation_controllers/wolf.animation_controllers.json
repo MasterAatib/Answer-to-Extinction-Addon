@@ -12,12 +12,6 @@
         }
       }
     },
-    "transforming": {
-      "animations": ["shake"],
-        "transitions": [
-            { "default": "query.get_property('dna:is_transforming') == 0" }
-        ]
-    },
     "controller.animation.wolf.baby_scaling": {
       "initial_state": "default",
       "states": {

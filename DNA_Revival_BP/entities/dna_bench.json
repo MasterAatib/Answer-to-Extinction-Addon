@@ -30,9 +30,6 @@
         "container_type": "container",
         "inventory_size": 5,
         "can_be_siphoned_from": false
-      },
-      "minecraft:shadow_radius": {
-        "radius": 0.0
       }
     },
     "events": {

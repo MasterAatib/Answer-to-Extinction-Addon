@@ -17,13 +17,10 @@
       "minecraft:geometry": "geometry.dna_bench",
       "minecraft:material_instances": {
         "*": {
-          "texture": "textures/blocks/gene_bench",
+          "texture": "dna:gene_bench",
           "render_method": "opaque"
         }
-      },
-      "minecraft:custom_components": [
-        "dna:experiment_bench_component"
-      ]
+      }
     }
   }
 }

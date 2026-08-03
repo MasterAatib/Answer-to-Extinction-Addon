@@ -15,29 +15,30 @@
         "default": "geometry.dire_wolf",
         "baby": "geometry.wolf"
       },
-      "scripts": {
-        "pre_animation": [
-          "variable.attack_time = Math.mod(query.modified_distance_moved, 40);",
-          "variable.is_baby = query.is_baby;",
-          "variable.is_riding = query.is_riding;"
-        ]
-      },
       "animations": {
         "walk": "animation.dire_wolf.walk",
-        "run": "animation.dire_wolf.run",
         "sit": "animation.dire_wolf.sit",
         "look_at_target": "animation.dire_wolf.look_at_target",
         "attack": "animation.dire_wolf.attack",
-        "shake": "animation.dire_wolf.shake",
-        "baby_transform": "animation.dire_wolf.baby_transform"
+        "wolf_setup": "animation.wolf.setup",
+        "wolf_baby_scaling": "animation.wolf.baby_scaling",
+        "wolf_look_at": "animation.common.look_at_target",
+        "wolf_leg_default": "animation.wolf.leg_default",
+        "wolf_sitting": "animation.wolf.sitting"
       },
-      "animation_controllers": [
-        { "look_at": "controller.animation.dire_wolf.look_at" },
-        { "move": "controller.animation.dire_wolf.move" },
-        { "sit": "controller.animation.dire_wolf.sit" },
-        { "baby": "controller.animation.dire_wolf.baby" },
-        { "attack": "controller.animation.dire_wolf.attack" }
-      ],
+      "scripts": {
+        "animate": [
+          { "walk": "query.modified_move_speed * !query.is_baby" },
+          { "sit": "query.is_sitting && !query.is_baby" },
+          { "look_at_target": "!query.is_baby" },
+          { "attack": "variable.attack_time > 0 && !query.is_baby" },
+          { "wolf_setup": "query.is_baby" },
+          { "wolf_baby_scaling": "query.is_baby" },
+          { "wolf_look_at": "query.is_baby" },
+          { "wolf_leg_default": "query.is_baby" },
+          { "wolf_sitting": "query.is_baby && query.is_sitting" }
+        ]
+      },
       "render_controllers": [
         "controller.render.dire_wolf"
       ],

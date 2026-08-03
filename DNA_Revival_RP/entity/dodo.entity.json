@@ -1,0 +1,42 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dna:dodo",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/dodo_adult",
+        "baby": "textures/entity/chicken"
+      },
+      "geometry": {
+        "default": "geometry.dodo",
+        "baby": "geometry.chicken.v1.8"
+      },
+      "animations": {
+        "bob": "animation.dodo.bob",
+        "walk": "animation.dodo.walk",
+        "chicken_idle": "animation.chicken.idle",
+        "chicken_walk": "animation.chicken.walk",
+        "chicken_baby_transform": "animation.chicken.baby_transform"
+      },
+      "scripts": {
+        "animate": [
+          { "bob": "!query.is_baby" },
+          { "walk": "query.modified_move_speed * !query.is_baby" },
+          { "chicken_idle": "query.is_baby" },
+          { "chicken_walk": "query.modified_move_speed * query.is_baby" },
+          { "chicken_baby_transform": "query.is_baby" }
+        ]
+      },
+      "render_controllers": [
+        "controller.render.dodo"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 10
+      }
+    }
+  }
+}

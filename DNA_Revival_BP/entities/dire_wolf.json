@@ -34,16 +34,12 @@
         }
       },
       "minecraft:wolf_sitting": {
-        "minecraft:is_sitting": {},
-        "minecraft:behavior.sit": {
+        "minecraft:sittable": {},
+        "minecraft:behavior.stay_while_sitting": {
           "priority": 0
         }
       },
       "minecraft:wolf_angry": {
-        "minecraft:anger_level": {
-          "anger_transfer": 100,
-          "anger_decrement_interval": 100
-        },
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 1,
           "entity_types": [
@@ -174,25 +170,16 @@
       "minecraft:behavior.owner_hurt_target": {
         "priority": 2
       },
-      "minecraft:behavior.sit": {
-        "priority": 0
-      },
       "minecraft:rideable": {
         "seat_count": 1,
         "family_types": ["player"],
         "seats": {
-          "position": [0.0, 0.8, 0.0],
-          "min_rotation": [0, 0],
-          "max_rotation": [0, 0]
+          "position": [0.0, 0.8, 0.0]
         },
         "controlling_seat": 0,
-        "require_saddle": false,
-        "crouch_skip_interact": true
+        "crouching_skip_interact": true
       },
-      "minecraft:behavior.ride": {
-        "priority": 0,
-        "speed_multiplier": 1.0
-      }
+      "minecraft:input_ground_controlled": {}
     },
     "events": {
         
@@ -210,11 +197,6 @@
       "dna:on_tame": {
         "add": {
           "component_groups": ["minecraft:wolf_tamed"]
-        },
-        "run_command": {
-          "command": [
-            "playsound random.orb @p"
-          ]
         }
       },
       "dna:set_sit": {
@@ -240,12 +222,7 @@
           "component_groups": ["minecraft:wolf_angry"]
         }
       }
-    },
-    "properties": {
-      "dna:is_baby": {
-        "type": "bool",
-        "default": false
-      }
     }
   }
 }
+

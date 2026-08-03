@@ -3,7 +3,7 @@
   "minecraft:item": {
     "description": {
       "identifier": "dna:dodo_syringe",
-      "category": "equipment"
+      "menu_category": { "category": "equipment" }
     },
     "components": {
       "minecraft:icon": "glow_syringe",

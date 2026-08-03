@@ -2,6 +2,7 @@ import { world, system, ItemStack } from "@minecraft/server";
 import { tryProcessBench } from "./dnaProcessor.js";
 
 const BENCH_ENTITY_ID = "dna:gene_bench_entity";
+const BENCH_BLOCK_ID = "dna:experiment_bench";
 const BENCH_UI_TITLE  = "gui.gene_bench.ui";
 
 function getEntity(block) {
@@ -48,17 +49,16 @@ function applyChanges(changes, container) {
   }
 }
 
-world.beforeEvents.worldInitialize.subscribe(({ blockComponentRegistry }) => {
-  blockComponentRegistry.registerCustomComponent("dna:experiment_bench_component", {
+world.afterEvents.playerPlaceBlock.subscribe(({ block }) => {
+  if (block.typeId === BENCH_BLOCK_ID) {
+    system.run(() => spawnBenchEntity(block));
+  }
+});
 
-    onPlace({ block }) {
-      system.run(() => spawnBenchEntity(block));
-    },
-
-    onPlayerDestroy({ block }) {
-      dropAndRemove(block);
-    }
-  });
+world.afterEvents.playerBreakBlock.subscribe(({ block, brokenBlockPermutation }) => {
+  if (brokenBlockPermutation.type.id === BENCH_BLOCK_ID) {
+    dropAndRemove(block);
+  }
 });
 
 system.runInterval(() => {

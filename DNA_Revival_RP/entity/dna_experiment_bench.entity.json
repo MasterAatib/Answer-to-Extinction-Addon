@@ -12,7 +12,9 @@
       "geometry": {
         "default": "geometry.dna"
       },
-      "render_controllers": [],
+      "render_controllers": [
+        "controller.render.default"
+      ],
       "spawn_egg": {
         "base_color": "#22cc66",
         "overlay_color": "#004411"
@@ -20,9 +22,9 @@
       "animations": {
         "bob": "animation.dna.gene_bench.bob"
       },
-      "animation_controllers": [
-        { "bob_controller": "controller.animation.dna.gene_bench.bob" }
-      ]
+      "scripts": {
+        "animate": ["bob"]
+      }
     }
   }
 }

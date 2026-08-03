@@ -3,7 +3,7 @@
   "minecraft:item": {
     "description": {
       "identifier": "dna:chicken_sample",
-      "category": "equipment"
+      "menu_category": { "category": "equipment" }
     },
     "components": {
       "minecraft:icon": "blood_syringe",
