@@ -9,3 +9,5 @@ item.dna:dodo_feather.name=Dodo Feather
 
 entity.dna:dodo_baby.name=Baby Dodo
 entity.dna:dodo_adult.name=Dodo
+item.spawn_egg.entity.dna:dire_wolf.name=Spawn Dire Wolf
+entity.dna:dire_wolf.name=Dire Wolf

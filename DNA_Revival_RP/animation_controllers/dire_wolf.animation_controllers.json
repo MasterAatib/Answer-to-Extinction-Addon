@@ -1,86 +1,37 @@
 {
   "format_version": "1.10.0",
   "animation_controllers": {
-    "controller.animation.dire_wolf.look_at": {
-      "initial_state": "default",
+    "controller.animation.dire_wolf.main": {
+      "initial_state": "idle",
       "states": {
-        "default": {
-          "animations": ["look_at_target"],
+        "idle": {
+          "animations": [ "idle" ],
           "transitions": [
-            { "default": "1" }
-          ]
-        }
-      }
-    },
-    "controller.animation.dire_wolf.move": {
-      "initial_state": "default",
-      "states": {
-        "default": {
-          "animations": ["walk"],
-          "transitions": [
-            { "run": "query.is_sprinting || query.is_riding" },
-            { "sit": "query.is_sitting" }
-          ]
-        },
-        "run": {
-          "animations": ["run"],
-          "transitions": [
-            { "default": "!(query.is_sprinting || query.is_riding)" },
-            { "sit": "query.is_sitting" }
-          ]
-        },
-        "sit": {
-          "animations": ["sit"],
-          "transitions": [
-            { "default": "!query.is_sitting" }
-          ]
-        }
-      }
-    },
-    "controller.animation.dire_wolf.sit": {
-      "initial_state": "default",
-      "states": {
-        "default": {
-          "transitions": [
-            { "sitting": "query.is_sitting" }
+            { "sitting":  "query.is_sitting" },
+            { "walking":  "query.is_moving && query.ground_speed <= 0.5" },
+            { "running":  "query.is_moving && query.ground_speed > 0.5" }
           ]
         },
         "sitting": {
-          "animations": ["sit"],
+          "animations": [ "sit" ],
           "transitions": [
-            { "default": "!query.is_sitting" }
-          ]
-        }
-      }
-    },
-    "controller.animation.dire_wolf.baby": {
-      "initial_state": "default",
-      "states": {
-        "default": {
-          "transitions": [
-            { "baby": "query.is_baby" }
+            { "idle": "!query.is_sitting" }
           ]
         },
-        "baby": {
-          "animations": ["baby_transform"],
+        "walking": {
+          "animations": [ "move" ],
           "transitions": [
-            { "default": "!query.is_baby" }
-          ]
-        }
-      }
-    },
-    "controller.animation.dire_wolf.attack": {
-      "initial_state": "default",
-      "states": {
-        "default": {
-          "transitions": [
-            { "attacking": "variable.attack_time >= 0.1 && variable.attack_time <= 0.15" }
+            { "idle":    "!query.is_moving" },
+            { "sitting": "query.is_sitting" },
+            { "running": "query.is_moving && query.ground_speed > 0.5" }
           ]
         },
-        "attacking": {
-          "animations": ["attack"],
+        "running": {
+          "animations": [ "run" ],
           "transitions": [
-            { "default": "1" }
+            { "idle":    "!query.is_moving" },
+            { "sitting": "query.is_sitting" },
+            { "walking": "query.is_moving && query.ground_speed <= 0.5" }
           ]
         }
       }

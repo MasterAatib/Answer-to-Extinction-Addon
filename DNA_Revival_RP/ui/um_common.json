@@ -1,8 +1,6 @@
 {
   "namespace": "um_common",
 
-  //unknown mcpe ui common file
-
   "invisible_slot_cell_image": {
     "type": "image",
     "texture": "textures/ui/cell_invisible",

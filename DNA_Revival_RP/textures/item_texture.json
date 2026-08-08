@@ -1,32 +1,47 @@
 {
-  "resource_pack_name": "Answer to Extinction RP",
-  "texture_name": "atlas.items",
-  "texture_data": {
-    "empty_syringe": {
-      "textures": "textures/items/empty_syringe"
-    },
-    "blood_syringe": {
-      "textures": "textures/items/blood_syringe"
-    },
-    "brown_syringe": {
-      "textures": "textures/items/brown_syringe"
-    },
-    "glow_syringe": {
-      "textures": "textures/items/glow_syringe",
-      "animation": {
-        "frames": [
-          { "index": 0 },
-          { "index": 1 },
-          { "index": 2 },
-          { "index": 3 },
-          { "index": 4 },
-          { "index": 5 },
-          { "index": 6 },
-          { "index": 7 }
-        ],
-        "frametime": 1,
-        "interpolate": false
-      }
+    "resource_pack_name": "Answer to Extinction RP",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "empty_syringe": {
+            "textures": "textures/items/empty_syringe"
+        },
+        "blood_syringe": {
+            "textures": "textures/items/blood_syringe"
+        },
+        "brown_syringe": {
+            "textures": "textures/items/brown_syringe"
+        },
+        "dna:dire_wolf_spawn_egg": {
+            "textures": "textures/items/pamobile/dna_dire_wolf_spawn_egg"
+        },
+        "spirit_gem": {
+            "textures": "textures/items/sprit_gem"
+        },
+        "fossil": {
+            "textures": "textures/items/fossil"
+        },
+        "fossil_1": {
+            "textures": "textures/items/fossil_1"
+        },
+        "dna_matrix": {
+            "textures": "textures/items/fossil"
+        },
+        "glow_syringe": {
+            "textures": "textures/items/glow_syringe",
+            "animation": {
+                "frames": [
+                    { "index": 0 },
+                    { "index": 1 },
+                    { "index": 2 },
+                    { "index": 3 },
+                    { "index": 4 },
+                    { "index": 5 },
+                    { "index": 6 },
+                    { "index": 7 }
+                ],
+                "frametime": 1,
+                "interpolate": false
+            }
+        }
     }
-  }
 }

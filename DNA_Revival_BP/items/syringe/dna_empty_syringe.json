@@ -1,0 +1,21 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dna:empty_syringe",
+      "menu_category": { "category": "equipment" }
+    },
+    "components": {
+      "minecraft:icon": "empty_syringe",
+      "minecraft:display_name": {
+        "value": "Empty Syringe"
+      },
+      "minecraft:max_stack_size": 1,
+      "minecraft:hand_equipped": true,
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.tools"
+      },
+      "minecraft:allow_off_hand": false
+    }
+  }
+}

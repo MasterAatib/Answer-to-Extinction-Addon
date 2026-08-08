@@ -7,27 +7,19 @@
         "default": "entity_alphatest"
       },
       "textures": {
-        "default": "textures/entity/dodo_adult",
-        "baby": "textures/entity/baby_dodo"
+        "default": "textures/entity/dodo_adult"
       },
       "geometry": {
-        "default": "geometry.dodo",
-        "baby": "geometry.chicken.v1.8"
+        "default": "geometry.dodo2"
       },
       "animations": {
-        "bob": "animation.dodo.bob",
-        "walk": "animation.dodo.walk",
-        "chicken_idle": "animation.chicken.idle",
-        "chicken_walk": "animation.chicken.walk",
-        "chicken_baby_transform": "animation.chicken.baby_transform"
+        "bob":             "animation.dodo.bob",
+        "walk":            "animation.dodo.walk",
+        "controller.main": "controller.animation.dodo"
       },
       "scripts": {
         "animate": [
-          { "bob": "!query.is_baby" },
-          { "walk": "query.modified_move_speed * !query.is_baby" },
-          { "chicken_idle": "query.is_baby" },
-          { "chicken_walk": "query.modified_move_speed * query.is_baby" },
-          { "chicken_baby_transform": "query.is_baby" }
+          "controller.main"
         ]
       },
       "render_controllers": [

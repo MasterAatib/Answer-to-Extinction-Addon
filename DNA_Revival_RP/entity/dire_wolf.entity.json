@@ -3,9 +3,7 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "dna:dire_wolf",
-      "materials": {
-        "default": "entity_alphatest"
-      },
+      "materials": { "default": "entity_alphatest" },
       "textures": {
         "default": "textures/entity/dire_wolf/dire_wolf",
         "tame": "textures/entity/dire_wolf/dire_wolf_tame",
@@ -13,47 +11,26 @@
         "baby": "textures/entity/dire_wolf/baby_dire_wolf"
       },
       "geometry": {
-        "default": "geometry.dire_wolf",
-        "baby": "geometry.wolf"
+        "default": "geometry.dire_wolf"
       },
       "animations": {
-        "walk": "animation.dire_wolf.walk",
-        "sit": "animation.dire_wolf.sit",
-        "look_at_target": "animation.dire_wolf.look_at_target",
-        "attack": "animation.dire_wolf.attack",
-        "wolf_setup": "animation.wolf.setup",
-        "wolf_baby_scaling": "animation.wolf.baby_scaling",
-        "wolf_look_at": "animation.common.look_at_target",
-        "wolf_leg_default": "animation.wolf.leg_default",
-        "wolf_sitting": "animation.wolf.sitting",
-        "baby_move": "animation.wolf.walk",
-        "baby_idle": "animation.wolf.idle",
-        "baby_sit": "animation.wolf.sit"
+        "move":            "animation.dire_wolf.walk",
+        "run":             "animation.dire_wolf.run",
+        "sit":             "animation.dire_wolf.sit",
+        "idle":            "animation.dire_wolf.idle",
+        "look_at_target":  "animation.dire_wolf.look_at_target",
+        "controller.main": "controller.animation.dire_wolf.main"
       },
-      "animation_controllers": [
-        { "baby_move": "controller.animation.dire_wolf_baby.move" },
-        { "move": "controller.animation.dire_wolf.move" },
-        { "sit": "controller.animation.dire_wolf.sit" }
-      ],
       "scripts": {
         "animate": [
-          { "walk": "query.modified_move_speed * !query.is_baby" },
-          { "sit": "query.is_sitting && !query.is_baby" },
-          { "look_at_target": "!query.is_baby" },
-          { "attack": "variable.attack_time > 0 && !query.is_baby" },
-          { "wolf_setup": "query.is_baby" },
-          { "wolf_baby_scaling": "query.is_baby" },
-          { "wolf_look_at": "query.is_baby" },
-          { "wolf_leg_default": "query.is_baby" },
-          { "wolf_sitting": "query.is_baby && query.is_sitting" }
+          "controller.main",
+          { "look_at_target": "query.is_interested" }
         ]
       },
-      "render_controllers": [
-        "controller.render.dire_wolf"
-      ],
+      "render_controllers": [ "controller.render.dire_wolf" ],
       "spawn_egg": {
-        "texture": "spawn_egg",
-        "texture_index": 5
+        "base_color": "#C0C0C0",
+        "overlay_color": "#8B4513"
       }
     }
   }

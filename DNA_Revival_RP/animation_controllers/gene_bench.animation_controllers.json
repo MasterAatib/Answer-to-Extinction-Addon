@@ -5,10 +5,7 @@
       "initial_state": "default",
       "states": {
         "default": {
-          "animations": ["bob"],
-          "transitions": [
-            { "default": "1" }
-          ]
+          "animations": [ "bob" ]
         }
       }
     }
