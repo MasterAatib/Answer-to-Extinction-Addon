@@ -1,2 +1,1 @@
-# Answer-to-Extinction-Addon
-edit the following files
+# Answer-to-Extinction
