@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dna:deer",
+      "materials": { "default": "entity_alphatest" },
+      "textures": {
+        "default": "textures/entity/deer"
+      },
+      "geometry": {
+        "default": "geometry.deer"
+      },
+      "animations": {
+        "bob":            "animation.deer.bob",
+        "walk":           "animation.deer.walk",
+        "run":            "animation.deer.run",
+        "eating":         "animation.deer.eating",
+        "controller.main": "controller.animation.deer.main"
+      },
+      "scripts": {
+        "animate": [
+          "controller.main",
+          { "eating": "query.is_eating" }
+        ]
+      },
+      "render_controllers": [ "controller.render.deer" ],
+      "spawn_egg": {
+        "base_color": "#8B6914",
+        "overlay_color": "#F5E6C8"
+      }
+    }
+  }
+}

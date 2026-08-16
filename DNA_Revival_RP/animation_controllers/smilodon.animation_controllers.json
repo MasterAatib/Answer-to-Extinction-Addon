@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.smilodon.main": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": [ "idle" ],
+          "transitions": [
+            { "sitting":  "query.is_sitting" },
+            { "walking":  "query.is_moving && query.ground_speed <= 0.5" },
+            { "running":  "query.is_moving && query.ground_speed > 0.5" }
+          ]
+        },
+        "sitting": {
+          "animations": [ "sit" ],
+          "transitions": [
+            { "idle": "!query.is_sitting" }
+          ]
+        },
+        "walking": {
+          "animations": [ "walk" ],
+          "transitions": [
+            { "idle":    "!query.is_moving" },
+            { "sitting": "query.is_sitting" },
+            { "running": "query.is_moving && query.ground_speed > 0.5" }
+          ]
+        },
+        "running": {
+          "animations": [ "run" ],
+          "transitions": [
+            { "idle":    "!query.is_moving" },
+            { "sitting": "query.is_sitting" },
+            { "walking": "query.is_moving && query.ground_speed <= 0.5" }
+          ]
+        }
+      }
+    }
+  }
+}

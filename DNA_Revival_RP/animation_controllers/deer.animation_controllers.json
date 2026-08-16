@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.deer.main": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": [ "bob" ],
+          "transitions": [
+            { "walking": "query.is_moving && query.ground_speed <= 0.5" },
+            { "running": "query.is_moving && query.ground_speed > 0.5" }
+          ]
+        },
+        "walking": {
+          "animations": [ "bob", "walk" ],
+          "transitions": [
+            { "idle":    "!query.is_moving" },
+            { "running": "query.is_moving && query.ground_speed > 0.5" }
+          ]
+        },
+        "running": {
+          "animations": [ "bob", "run" ],
+          "transitions": [
+            { "idle":    "!query.is_moving" },
+            { "walking": "query.is_moving && query.ground_speed <= 0.5" }
+          ]
+        }
+      }
+    }
+  }
+}

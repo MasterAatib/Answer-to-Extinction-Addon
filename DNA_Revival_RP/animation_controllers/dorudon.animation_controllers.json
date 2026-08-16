@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dorudon.main": {
+      "initial_state": "idle",
+      "states": {
+        "idle": {
+          "animations": [ "idle" ],
+          "transitions": [
+            { "moving": "query.is_moving" }
+          ]
+        },
+        "moving": {
+          "animations": [ "move" ],
+          "transitions": [
+            { "idle": "!query.is_moving" }
+          ]
+        }
+      }
+    }
+  }
+}

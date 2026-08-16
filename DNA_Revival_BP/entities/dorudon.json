@@ -1,0 +1,70 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dna:dorudon",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "spawn_category": "water_creature"
+    },
+    "components": {
+      "minecraft:type_family": { "family": ["dorudon", "mob", "aquatic"] },
+      "minecraft:health": { "value": 25, "max": 25 },
+      "minecraft:attack": { "damage": 5 },
+      "minecraft:collision_box": { "width": 1.0, "height": 0.6 },
+      "minecraft:movement": { "value": 0.4 },
+      "minecraft:movement.basic": {},
+      "minecraft:underwater_movement": { "value": 0.45 },
+      "minecraft:movement.swim": {},
+      "minecraft:physics": {},
+      "minecraft:nameable": {},
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_air": true,
+        "breathes_water": true
+      },
+      "minecraft:navigation.swim": {
+        "can_path_over_water": false,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:loot": { "table": "loot_tables/entities/chicken.json" },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? Math.Random(1,4) : 0"
+      },
+      "minecraft:behavior.float": { "priority": 0 },
+      "minecraft:behavior.hurt_by_target": { "priority": 1 },
+      "minecraft:behavior.melee_attack": {
+        "priority": 2, "reach_multiplier": 1.5, "track_target": true
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 3,
+        "reselect_targets": true,
+        "attack_interval": { "range_min": 0, "range_max": 8 },
+        "set_persistent": true,
+        "must_see": true,
+        "entity_types": [{
+          "filters": {
+            "any_of": [
+              { "test": "is_family", "value": "fish" },
+              { "test": "is_family", "value": "squid" }
+            ]
+          },
+          "max_dist": 12
+        }]
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7, "look_distance": 8
+      },
+      "minecraft:behavior.random_swim": {
+        "priority": 8,
+        "speed_multiplier": 1.0,
+        "avoid_surface": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dna:smilodon",
+      "materials": { "default": "entity_alphatest" },
+      "textures": {
+        "default": "textures/entity/smilodon/smilodon"
+      },
+      "geometry": {
+        "default": "geometry.smilodon"
+      },
+      "animations": {
+        "idle":           "animation.smilodon.idle",
+        "walk":           "animation.smilodon.walk",
+        "run":            "animation.smilodon.run",
+        "sit":            "animation.smilodon.sit",
+        "attack":         "animation.smilodon.attack",
+        "look_at_target": "animation.smilodon.look_at_target",
+        "controller.main": "controller.animation.smilodon.main"
+      },
+      "scripts": {
+        "animate": [
+          "controller.main",
+          { "look_at_target": "query.is_interested" },
+          { "attack": "query.is_attacking" }
+        ]
+      },
+      "render_controllers": [ "controller.render.smilodon" ],
+      "spawn_egg": {
+        "base_color": "#8B7355",
+        "overlay_color": "#F5DEB3"
+      }
+    }
+  }
+}

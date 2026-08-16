@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dna:dorudon",
+      "materials": { "default": "entity_alphatest" },
+      "textures": {
+        "default": "textures/entity/dorudon/dorudon"
+      },
+      "geometry": {
+        "default": "geometry.dorudon"
+      },
+      "animations": {
+        "idle": "animation.dorudon.idle",
+        "move": "animation.dorudon.move",
+        "attack": "animation.dorudon.attack",
+        "controller.main": "controller.animation.dorudon.main"
+      },
+      "scripts": {
+        "animate": [
+          "controller.main",
+          { "attack": "query.is_attacking" }
+        ]
+      },
+      "render_controllers": [ "controller.render.dorudon" ],
+      "spawn_egg": {
+        "base_color": "#3D6B8C",
+        "overlay_color": "#A8C8E0"
+      }
+    }
+  }
+}

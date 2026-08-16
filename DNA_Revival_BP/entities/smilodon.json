@@ -1,0 +1,145 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dna:smilodon",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "spawn_category": "creature"
+    },
+    "components": {
+      "minecraft:type_family": { "family": ["smilodon", "mob", "cat"] },
+      "minecraft:health": { "value": 30, "max": 30 },
+      "minecraft:attack": { "damage": 8 },
+      "minecraft:collision_box": { "width": 1.0, "height": 1.4 },
+      "minecraft:movement": { "value": 0.35 },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:physics": {},
+      "minecraft:nameable": {},
+      "minecraft:breathable": { "total_supply": 15, "suffocate_time": 0 },
+      "minecraft:navigation.walk": {
+        "avoid_damage_blocks": true,
+        "can_path_over_water": true
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [{
+          "cause": "lava",
+          "damage_per_tick": 4,
+          "filters": { "test": "in_lava", "subject": "self", "value": true }
+        }]
+      },
+      "minecraft:healable": {
+        "items": [
+          { "heal_amount": 4,  "item": "beef" },
+          { "heal_amount": 8,  "item": "cooked_beef" },
+          { "heal_amount": 4,  "item": "porkchop" },
+          { "heal_amount": 8,  "item": "cooked_porkchop" },
+          { "heal_amount": 3,  "item": "chicken" },
+          { "heal_amount": 6,  "item": "cooked_chicken" },
+          { "heal_amount": 3,  "item": "muttonRaw" },
+          { "heal_amount": 6,  "item": "muttonCooked" }
+        ]
+      },
+      "minecraft:loot": { "table": "loot_tables/entities/wolf.json" },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? Math.Random(1,5) : 0"
+      },
+      "minecraft:tameable": {
+        "probability": 0.25,
+        "tame_items": "bone",
+        "tame_event": { "event": "dna:on_tame", "target": "self" }
+      },
+      "minecraft:behavior.float": { "priority": 0 },
+      "minecraft:behavior.hurt_by_target": { "priority": 3 },
+      "minecraft:behavior.leap_at_target": {
+        "priority": 4, "set_persistent": true, "target_dist": 0.4
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 5, "reach_multiplier": 1.2, "track_target": true
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7, "look_distance": 8
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 8, "speed_multiplier": 1.0
+      },
+      "minecraft:behavior.random_look_around": { "priority": 9 }
+    },
+    "component_groups": {
+      "dna:smilodon_wild": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 4,
+          "reselect_targets": true,
+          "attack_interval": { "range_min": 0, "range_max": 10 },
+          "set_persistent": true,
+          "must_see": true,
+          "entity_types": [{
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "value": "sheep" },
+                { "test": "is_family", "value": "cow" },
+                { "test": "is_family", "value": "horse" },
+                { "test": "is_family", "value": "deer" },
+                { "test": "is_family", "value": "player" }
+              ]
+            },
+            "max_dist": 16
+          }]
+        }
+      },
+      "dna:smilodon_tame": {
+        "minecraft:is_tamed": {},
+        "minecraft:health": { "value": 50, "max": 50 },
+        "minecraft:attack": { "damage": 6 },
+        "minecraft:nameable": {},
+        "minecraft:leashable": {
+          "can_be_cut": false,
+          "can_be_stolen": false,
+          "presets": [{
+            "hard_distance": 6.0,
+            "max_distance": 10.0,
+            "spring_type": "bouncy",
+            "soft_distance": 4.0
+          }]
+        },
+        "minecraft:sittable": {
+          "sit_event":   { "event": "dna:on_sit",   "target": "self" },
+          "stand_event": { "event": "dna:on_stand", "target": "self" }
+        },
+        "minecraft:behavior.stay_while_sitting": { "priority": 3 },
+        "minecraft:behavior.follow_owner": {
+          "priority": 6,
+          "speed_multiplier": 1.1,
+          "start_distance": 10,
+          "stop_distance": 2,
+          "post_teleport_distance": 1
+        },
+        "minecraft:behavior.owner_hurt_by_target": { "priority": 1 },
+        "minecraft:behavior.owner_hurt_target":    { "priority": 2 },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 5,
+          "attack_interval": { "range_min": 0, "range_max": 10 },
+          "set_persistent": true,
+          "must_see": true,
+          "entity_types": [{
+            "filters": { "test": "is_family", "value": "skeleton" },
+            "max_dist": 16
+          }]
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": { "component_groups": ["dna:smilodon_wild"] }
+      },
+      "dna:on_tame": {
+        "add":    { "component_groups": ["dna:smilodon_tame"] },
+        "remove": { "component_groups": ["dna:smilodon_wild"] }
+      },
+      "dna:on_sit":   { "add": { "component_groups": ["minecraft:sitting"] } },
+      "dna:on_stand": { "remove": { "component_groups": ["minecraft:sitting"] } }
+    }
+  }
+}
