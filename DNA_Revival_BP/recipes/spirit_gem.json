@@ -1,0 +1,23 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dna:spirit_gem"
+    },
+    "tags": ["crafting_table"],
+    "ingredients": [
+      { "item": "minecraft:nether_star" },
+      { "item": "minecraft:diamond_block" },
+      { "item": "minecraft:emerald_block" }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:glass_bottle"
+      }
+    ],
+    "result": {
+      "item": "dna:spirit_gem",
+      "count": 1
+    }
+  }
+}

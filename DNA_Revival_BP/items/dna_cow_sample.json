@@ -1,0 +1,17 @@
+{
+  "format_version": "1.21.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dna:cow_sample",
+      "menu_category": { "category": "equipment" }
+    },
+    "components": {
+      "minecraft:icon": "blood_syringe",
+      "minecraft:display_name": { "value": "Cow Sample Syringe" },
+      "minecraft:max_stack_size": 16,
+      "minecraft:hand_equipped": true,
+      "minecraft:creative_category": { "parent": "itemGroup.name.tools" },
+      "minecraft:allow_off_hand": false
+    }
+  }
+}

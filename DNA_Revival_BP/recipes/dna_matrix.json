@@ -1,0 +1,24 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dna:dna_matrix"
+    },
+    "tags": ["crafting_table"],
+    "ingredients": [
+      { "item": "minecraft:netherite_ingot" },
+      { "item": "minecraft:dragon_breath" },
+      { "item": "minecraft:chorus_fruit" },
+      { "item": "minecraft:diamond" }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:glass_bottle"
+      }
+    ],
+    "result": {
+      "item": "dna:dna_matrix",
+      "count": 1
+    }
+  }
+}

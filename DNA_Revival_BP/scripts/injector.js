@@ -43,8 +43,25 @@ export function registerInjectorEvents() {
     const sampleId = DNA_SAMPLE_MAP[hitEntity.typeId];
     if (!sampleId) return;
 
-    // Replace empty syringe with filled sample in mainhand
-    equip.setEquipment("Mainhand", new ItemStack(sampleId, 1));
+    // --- FIX: decrement stack size, not replace whole stack ---
+    const newAmount = held.amount - 1;
+    if (newAmount > 0) {
+      // Still have syringes left – keep them
+      const remaining = new ItemStack(EMPTY_SYRINGE_ID, newAmount);
+      equip.setEquipment("Mainhand", remaining);
+    } else {
+      // Last syringe used – clear the slot
+      equip.setEquipment("Mainhand", undefined);
+    }
+
+    // Give the filled sample to the player (add to inventory or drop if full)
+    const sampleStack = new ItemStack(sampleId, 1);
+    const remainingSample = player.getComponent("inventory").container.addItem(sampleStack);
+    if (remainingSample && remainingSample.amount > 0) {
+      // Inventory full – drop the sample at player's feet
+      player.dimension.spawnItem(remainingSample, player.location);
+    }
+
     cooldowns.set(player.name, now);
 
     // Feedback
