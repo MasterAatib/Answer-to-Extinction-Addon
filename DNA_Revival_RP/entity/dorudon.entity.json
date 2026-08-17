@@ -18,8 +18,7 @@
       },
       "scripts": {
         "animate": [
-          "controller.main",
-          { "attack": "query.is_attacking" }
+          "controller.main"
         ]
       },
       "render_controllers": [ "controller.render.dorudon" ],

@@ -22,8 +22,7 @@
       "scripts": {
         "animate": [
           "controller.main",
-          { "look_at_target": "query.is_interested" },
-          { "attack": "query.is_attacking" }
+          { "look_at_target": "query.is_interested" }
         ]
       },
       "render_controllers": [ "controller.render.smilodon" ],
