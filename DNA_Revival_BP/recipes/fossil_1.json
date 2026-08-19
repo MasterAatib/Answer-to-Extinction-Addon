@@ -6,8 +6,8 @@
     },
     "tags": ["crafting_table"],
     "ingredients": [
-      { "item": "minecraft:bone_block", "count": 8 },
-      { "item": "minecraft:coal_block", "count": 4 },
+      { "item": "minecraft:bone_block", "count": 4 },
+      { "item": "minecraft:coal_block", "count": 2 },
       { "item": "minecraft:diamond" }
     ],
     "unlock": [

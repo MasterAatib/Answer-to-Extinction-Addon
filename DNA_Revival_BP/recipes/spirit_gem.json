@@ -6,9 +6,9 @@
     },
     "tags": ["crafting_table"],
     "ingredients": [
-      { "item": "minecraft:nether_star" },
-      { "item": "minecraft:diamond_block" },
-      { "item": "minecraft:emerald_block" }
+      { "item": "minecraft:bone_block" },
+      { "item": "minecraft:diamond" },
+      { "item": "minecraft:emerald" }
     ],
     "unlock": [
       {

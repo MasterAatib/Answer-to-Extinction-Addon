@@ -3,7 +3,7 @@
   "header": {
     "name": "Answer to Extinction BP",
     "description": "Bring extinct species back to life!",
-    "uuid": "b4b4f536-802b-4a88-a32a-a732b6928512",
+    "uuid": "7f990153-f44c-40c7-bbd8-946a22cb52df",
     "version": [1, 0, 0],
     "min_engine_version": [1, 21, 0]
   },
@@ -27,7 +27,7 @@
       "version": "1.15.0"
     },
     {
-      "uuid": "06d935c1-f6ed-4e7e-bf43-8f1d40f8ee06",
+      "uuid": "74d960ae-5224-4e0e-a740-5106cc36fd07",
       "version": [1, 0, 0]
     }
   ]
