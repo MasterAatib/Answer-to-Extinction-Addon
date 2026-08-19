@@ -1,13 +1,55 @@
 tile.dna:experiment_bench.name=§bDNA Experiment Bench
 
-item.dna:empty_syringe.name=Empty Syringe
-item.dna:chicken_sample.name=Chicken DNA Sample
-item.dna:dodo_syringe.name=§aModified Dodo Genes
-item.dna:failed_syringe.name=§cDegraded Genetic Material
-item.dna:stabilizer.name=Genetic Stabilizer
-item.dna:dodo_feather.name=Dodo Feather
+# ============================================
+# Answer to Extinction - Localization (en_US)
+# ============================================
 
-entity.dna:dodo_baby.name=Baby Dodo
-entity.dna:dodo_adult.name=Dodo
-item.spawn_egg.entity.dna:dire_wolf.name=Spawn Dire Wolf
+# ----- Entities -----
 entity.dna:dire_wolf.name=Dire Wolf
+entity.dna:dodo.name=Dodo
+entity.dna:smilodon.name=Smilodon
+entity.dna:deer.name=Deer
+entity.dna:dorudon.name=Dorudon
+
+# ----- Spawn Eggs -----
+item.spawn_egg.entity.dna:dire_wolf.name=Dire Wolf Spawn Egg
+item.spawn_egg.entity.dna:dodo.name=Dodo Spawn Egg
+item.spawn_egg.entity.dna:smilodon.name=Smilodon Spawn Egg
+item.spawn_egg.entity.dna:deer.name=Deer Spawn Egg
+item.spawn_egg.entity.dna:dorudon.name=Dorudon Spawn Egg
+
+# ----- Items -----
+item.dna:empty_syringe=Empty Syringe
+item.dna:failed_syringe=Failed Syringe
+item.dna:chicken_sample=Chicken DNA Sample
+item.dna:wolf_sample=Wolf DNA Sample
+item.dna:sheep_sample=Sheep DNA Sample
+item.dna:dolphin_sample=Dolphin DNA Sample
+item.dna:goat_sample=Goat DNA Sample
+item.dna:cow_sample=Cow DNA Sample
+item.dna:spirit_gem=Spirit Gem
+item.dna:dna_matrix=DNA Matrix
+item.dna:fossil_1=Ancient Fossil (Large)
+item.dna:fossil=Ancient Fossil
+
+# ----- Modified DNA Syringes -----
+item.dna:dodo_syringe=Modified Dodo DNA
+item.dna:dire_wolf_syringe=Modified Dire Wolf DNA
+item.dna:smilodon_syringe=Modified Smilodon DNA
+item.dna:deer_syringe=Modified Deer DNA
+item.dna:dorudon_syringe=Modified Dorudon DNA
+
+# ----- UI Strings -----
+action.interact.ride=Ride
+action.interact.sit=Sit
+action.interact.dye=Dye
+action.interact.name=Name
+gui.gene_bench.title=Gene Bench
+gui.gene_bench.slot_a=DNA Sample
+gui.gene_bench.slot_b=Catalyst
+gui.gene_bench.output=Result
+container.dna:gene_bench=Gene Bench
+
+# ----- Death Messages (optional) -----
+death.attack.dire_wolf=%1$s was mauled by a Dire Wolf
+death.attack.dire_wolf.item=%1$s was mauled by %2$s using %3$s
